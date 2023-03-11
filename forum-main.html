@@ -38,19 +38,20 @@
     <nav id="navbarPlaceholder"></nav>
 
     <h1>Welcome to our Community</h1>
-    <div class="card">
-        <h2>Front-end</h2>
-        <p>Insert content about Front-end here</p>
-        <a href="#">Learn more</a>
-    </div>
-    <div class="card">
-        <h2>Back-end</h2>
-        <p>Insert content about Back-end here</p>
-        <a href="#">Learn more</a>
+    <div id="forums-go-here" class="container-fluid">
     </div>
 
+    <template id="forumCardTemplate">
+        <div class="card">
+            <h2>Front-end</h2>
+            <p>Insert content about Front-end here</p>
+            <p>Insert content about Front-end here</p>
+            <a href="/forum-list.html">Learn more</a>
+        </div>
+    </template>
     <script src="./scripts/firebaseAPI.js"></script>
     <script src="./scripts/skeleton.js"></script>
+    <script src="./scripts/forum-main.js"></script>
 </body>
 
 </html>
