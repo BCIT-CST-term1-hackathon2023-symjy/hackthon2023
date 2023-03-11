@@ -69,13 +69,36 @@ body {
     margin-left: auto;
     display: block;
     margin-bottom: 1rem;
-    font-weight: 800;
+    font-weight: 700;
     text-align: center;
+    font-size: small;
   }
 
   .btn-write:hover {
     background-color: greenyellow;
     color: #000;
   }
+/*   
+  #button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  max-width: 250px; 
+  margin-bottom: 3px;
+    
+  } */
+
+  #button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 1px;
+  }
   
+  .btn-write {
+    margin-right: 5px;
+    margin-left: 10px;
+  }
+
+
 
