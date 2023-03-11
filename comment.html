@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Comment Page</title>
+
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="./styles/review.css">
+    
+</head>
+
+<body>
+    <div class="container">
+        <br>
+        <h1><span id="hikeName">Comment</span></h1>
+        <br>
+        <form>
+            <div class="form-group">
+                <input type="comment" class="form-control" id="comment" placeholder="comment">
+            </div><br>
+            <br>
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="btn btn-lg btn-primary pull-right"
+                        onclick="writeReview()">commit</button>
+                </div>
+        </form>
+    </div>
+    <script src="./scripts/firebaseAPI.js"></script>
+    <script src="./scripts/skeleton.js"></script>
+    <script src="./scripts/review.js"></script>
+
+</body>
+
+</html>

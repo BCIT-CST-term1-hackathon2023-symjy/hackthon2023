@@ -70,45 +70,33 @@
         </section>
         <section class="comments">
             <h2>Comments</h2>
-            <div id="comments-list">
-                <div class="comment">
-                    <p class="name">John Doe</p>
-                    <p class="date">March 10, 2023</p>
-                    <p class="content">Great story! I love the way you describe the climb and the sense of
-                        accomplishment at
-                        the end. Keep up the good work!</p>
+
+
+            
+            <form>
+                <div class="comment-section">
+                    <input type="comment" class="comment" id="comment" placeholder="comment">
                 </div>
-            </div>
+                    <div class="comment-btn-section">
+                        <button type="button" class="comment" onclick="writeReview()">Submit</button>
+
+                    </div>
+            </form>
             <div id="pagination">
                 <button id="prev-page-btn" disabled>Previous Page</button>
                 <button id="next-page-btn">Next Page</button>
             </div>
         </section>
+
     </main>
 
-    <div id="disqus_thread"></div>
-    <script>
-        /**
-        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-        /*
-        var disqus_config = function () {
-        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
-        */
-        (function () { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://symjy.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
-            Disqus.</a></noscript>
     <!-- Add JavaScript file -->
     <script src="./scripts/firebaseAPI.js"></script>
     <script src="./scripts/skeleton.js"></script>
+    <script src="./scripts/forum-detail.js"></script>
+    
+
+
 </body>
 
 </html>

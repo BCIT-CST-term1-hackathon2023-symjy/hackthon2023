@@ -187,3 +187,42 @@ main {
     margin-left: auto; /* center the Disqus section horizontally */
     margin-right: auto;
 }
+
+
+.comment-section {
+    margin-top: 50px;
+  }
+  
+  .comment-section label {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .comment-section input {
+    width: 100%;
+    padding: 50px 100px; 
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .comment-btn-section {
+    margin-top: 20px;
+    text-align: right;
+  }
+  
+  .comment-btn-section button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .comment-btn-section button:hover {
+    background-color: #0069d9;
+  }
+  
