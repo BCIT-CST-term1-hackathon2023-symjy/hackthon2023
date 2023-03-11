@@ -21,7 +21,7 @@ body {
   
   /* Hero section */
   #hero {
-    height: 80vh;
+    height: 50vh;
     display: flex;
     align-items: center;
   }
