@@ -47,7 +47,6 @@
             <a class="btn btn-primary btn-lg" href="forum-main.html" role="button">Go Forum</a>
         </div>
     </section>
-
     <!-- Features section -->
     <!-- <section id="features" class="bg-white">
         <div class="container">
@@ -83,8 +82,6 @@
             </div>
         </div>
     </section> -->
-    <div id="statistics-go-here" class="container-fluid">
-    </div>
     <!-- Testimonials section -->
     <section id="testimonials" class="bg-light">
         <div class="container">
@@ -98,13 +95,9 @@
                             <li data-target="#testimonial-carousel" data-slide-to="1"></li>
                             <li data-target="#testimonial-carousel" data-slide-to="2"></li>
                         </ol>
-
-                        <div class="statistics-group">
-                            <!-- <div id="statistics-go-here" class="container-fluid">
-                            </div> -->
+                        <div class="carousel-inner">
+                            <div id="statistics-go-here" class="container-fluid"></div>
                         </div>
-                    </div>
-
                         <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
@@ -118,14 +111,16 @@
             </div>
         </div>
     </section>
-
     <template id="statisticsCardTemplate">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <blockquote class="blockquote">
-                    <p class="mb-0"></p>
-                </blockquote>
-            </div>
+        <div class="carousel-item">
+            <blockquote class="blockquote">
+                <p class="mb-0">This community has been a great resource for me as a new
+                    developer.
+                    The forums are full of helpful people and the collaboration tools have
+                    helped me
+                    work on projects with others.</p>
+                    <footer class="blockquote-footer">John Smith</footer>
+            </blockquote>
         </div>
     </template>
     <!-- Footer -->
