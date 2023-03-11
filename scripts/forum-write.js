@@ -9,12 +9,14 @@ document.querySelector('form').addEventListener('submit', function(e) {
       var title = document.getElementById('title').value;
       var category = document.getElementById('category').value;
       var content = document.getElementById('content').value;
+      var specialization = document.getElementById('specialization').value;
 
       db.collection("posts").add({
         title: title,
         interest: category,
         content: content,
         writer: uid,
+        specialization: specialization,
       })
       .then(function(docRef) {
         console.log("Document written with ID: ", docRef.id);

@@ -60,15 +60,22 @@ body {
     border-color: green;
 }
 
-/* #button{
-    display: inline-block;
-    float: right;
-    margin: 10px;
-} */
+.container {
+    margin-top: 4rem;
+    
+  }
+  
+  .btn-write {
+    margin-left: auto;
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    text-align: center;
+  }
 
-#button{
-    display: inline-block;
-    float: right;
-    margin: 10px;
-}
+  .btn-write:hover {
+    background-color: greenyellow;
+    color: #000;
+  }
+  
 
