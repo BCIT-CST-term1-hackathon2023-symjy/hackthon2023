@@ -54,3 +54,21 @@ body {
 .list-group-item {
     width: 100%;
 }
+
+.btn-lg{
+    background-color: green;
+    border-color: green;
+}
+
+/* #button{
+    display: inline-block;
+    float: right;
+    margin: 10px;
+} */
+
+#button{
+    display: inline-block;
+    float: right;
+    margin: 10px;
+}
+
