@@ -4,6 +4,7 @@ var firebaseConfig = {
   };
   firebase.initializeApp(firebaseConfig);
   
+  
   // Get references to Firebase database and authentication
   var database = firebase.database();
   var auth = firebase.auth();
