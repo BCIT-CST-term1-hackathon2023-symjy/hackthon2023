@@ -8,13 +8,42 @@
 
 <body>
     <h1>Profile Page</h1>
-    <img src="profile-picture.jpg" alt="Profile Picture">
-    <h2>Name: John Doe</h2>
-    <p>Email: johndoe@example.com</p>
-    <p>Location: New York, USA</p>
-    <p>Interests: Reading, Cooking, Traveling</p>
-    <p>Bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo sapien auctor, bibendum massa ut,
-        varius risus. Suspendisse potenti. Morbi ultricies interdum lacus, sit amet fermentum elit commodo a.</p>
+    <img src="https://i.pinimg.com/736x/03/57/fe/0357fe8af0d178acf922e06901823903.jpg" alt="Profile Picture">
+
+    <form>
+        <fieldset>
+          <label for="position detail">Position</label>
+          <select id="position">
+            <option value="position-1">Junior Program Developer</option>
+            <option value="position-2">Associate Program Developer</option>
+            <option value="position-3">Mid-Level Program Developer</option>
+            <option value="position-4">Senior Program Developer</option>
+            <option value="position-5">Lead Program Developer</option>
+          </select>
+          <br>
+          <label for="career year">Career</label>
+          <select id="career">
+            <option value="career-1">0-2 years</option>
+            <option value="career-2">2-4 years</option>
+            <option value="career-3">4-6 years</option>
+            <option value="career-4">6-8 years</option>
+            <option value="career-5">8+ years</option>
+          </select>
+          <br>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+          <br>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          <br>
+          <label for="location">Location:</label>
+          <input type="text" id="location" name="location" required>
+          <br>
+          <label for="interests">Interests:</label>
+          <input type="text" id="interests" name="interests"><br>
+          <button type="button" class="Add Task" onclick="addTask()">Add Task</button>
+        </fieldset>
+    </form>
 </body>
 
 </html>
