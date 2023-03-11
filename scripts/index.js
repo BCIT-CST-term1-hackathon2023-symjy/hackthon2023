@@ -33,7 +33,7 @@ function displayForumCards(collection) {
         //iterate thru each doc
         // get value of the "content" key
         var content = doc.data().content; // get value of the "content" key
-            console.log(content);
+            console.log(content)
         var docID = doc.id;
         console.log(docID);
         let newcard = cardTemplate.content.cloneNode(true);
