@@ -20,12 +20,12 @@ document.querySelector('form').addEventListener('submit', function(e) {
       })
       .then(function(docRef) {
         console.log("Document written with ID: ", docRef.id);
-        alert("Good.");
+        alert("Post uploaded.");
         location.href = "forum-list.html";
       })
       .catch(function(error) {
         console.error("Error adding document: ", error);
-        alert("Bad.");
+        alert("Error.");
       });
     }
   });
