@@ -1,0 +1,56 @@
+/* Add custom styles here */
+
+/* Set background color for the page */
+body {
+    background-color: #f2f2f2;
+}
+
+/* Style the navigation bar */
+.navbar {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-size: 24px;
+}
+
+.nav-link {
+    color: #333;
+}
+
+.nav-link:hover {
+    color: #000;
+}
+
+/* Style the container for the list of items */
+.container {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Style the list of items */
+.list-group-item {
+    background-color: #fff;
+    border-color: #ccc;
+}
+
+.list-group-item:hover {
+    background-color: #f2f2f2;
+}
+
+/* Style the heading and timestamp for each item */
+.list-group-item .mb-1 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.list-group-item small {
+    color: #999;
+}
+
+/* Set the width of the list items to 100% */
+.list-group-item {
+    width: 100%;
+}

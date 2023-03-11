@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Developer Community</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/index.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Developer Community</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Forums</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sign up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero section -->
+    <section id="hero" class="bg-light">
+        <div class="container text-center">
+            <h1>Welcome to Developer Community</h1>
+            <p class="lead">Join a community of developers, collaborate on projects, share knowledge, and grow your
+                skills.</p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Join Now</a>
+        </div>
+    </section>
+
+    <!-- Features section -->
+    <section id="features" class="bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <i class="fas fa-comments fa-3x mb-3"></i>
+                            <h3>Community Forums</h3>
+                            <p>Join discussions, ask questions, and get help from other developers.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <i class="fas fa-code-branch fa-3x mb-3"></i>
+                            <h3>Collaboration Tools</h3>
+                            <p>Work on projects with other developers, track changes, and manage versions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <i class="fas fa-book fa-3x mb-3"></i>
+                            <h3>Learning Resources</h3>
+                            <p>Access a library of tutorials, courses, and articles to learn new skills and
+                                technologies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials section -->
+    <section id="testimonials" class="bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="text-center">What Our Users Say</h2>
+                    <hr>
+                    <div id="testimonial-carousel" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#testimonial-carousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#testimonial-carousel" data-slide-to="1"></li>
+                            <li data-target="#testimonial-carousel" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <blockquote class="blockquote">
+                                    <p class="mb-0">This community has been a great resource for me as a new developer.
+                                        The forums are full of helpful people and the collaboration tools have helped me
+                                        work on projects with others.</p>
+                                    <footer class="blockquote-footer">John Smith</footer>
+                                </blockquote>
+                            </div>
+                            <div class="carousel-item">
+                                <blockquote class="blockquote">
+                                    <p class="mb-0">I love the learning resources on this platform. They've helped me
+                                        learn new skills and stay up-to-date on the latest technologies.</p>
+                                    <footer class="blockquote-footer">Jane Doe</footer>
+                                </blockquote>
+                            </div>
+                            <div class="carousel-item">
+                                <blockquote class="blockquote">
+                                    <p class="mb-0">This platform has helped me connect with other developers and build
+                                        my professional network. I've made some great connections and even landed a job
+                                        through the community.</p>
+                                    <footer class="blockquote-footer">Mike Johnson</footer>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#testimonial-carousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-light text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>&copy; 2023 Developer Community. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

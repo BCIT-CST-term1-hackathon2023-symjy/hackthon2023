@@ -1,0 +1,47 @@
+/* Style for the page title */
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+/* Styles for the cards */
+.card {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    padding: 20px;
+    margin: 50px auto;
+    width: 80%;
+    max-width: 600px;
+}
+
+/* Styles for the card headings */
+.card h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Styles for the card content */
+.card p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Styles for the "Learn more" button */
+.card a {
+    display: inline-block;
+    background-color: #0077cc;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+/* Hover state for the "Learn more" button */
+.card a:hover {
+    background-color: #005fa3;
+}
