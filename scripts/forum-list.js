@@ -30,8 +30,6 @@ function displayForumCards(collection) {
     .get() //the collection called "forums"
     .then((allForumsList) => {
       allForumsList.forEach((doc) => {
-        //iterate thru each doc
-        // get value of the "content" key
         var interest = doc.data().interest; // get value of the "interest" key
         var title = doc.data().title; // get value of the "title" key
         var writer = doc.data().writer; // get value of the "writer" key
