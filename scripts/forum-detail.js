@@ -1,6 +1,3 @@
-
-// function insertNameFromFirestore(){
-    
 //    firebase.auth().onAuthStateChanged(user =>{
 //         if (user){
 //            console.log(user.uid); // let me to know who is the user that logged in to get the UID
