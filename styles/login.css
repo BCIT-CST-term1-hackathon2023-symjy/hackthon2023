@@ -1,55 +1,17 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    margin: 0;
-}
-
-h1 {
-    text-align: center;
-    margin-top: 20px;
-}
-
-form {
-    max-width: 400px;
-    margin: 0 auto;
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px #ccc;
-}
-
-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.firebaseui-container {
+    background-color: aliceblue;
     box-sizing: border-box;
-    margin-bottom: 10px;
-}
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    color: rgba(16, 218, 154, 0.87);
+    direction: ltr;
+    font: 16px Roboto, arial, sans-serif;
+    margin: 20px auto;
+    max-width: 360px;
+    /** This is needed for the invisible reCAPTCHA badge to show. */
+    overflow: visible;
+    position: relative;
+    text-align: left;
+    width: 100%;
+  }
 
-input[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-input[type="submit"]:hover {
-    background-color: #45a049;
-}
-
-@media screen and (max-width: 600px) {
-    form {
-        margin-top: 50px;
-    }
-}
