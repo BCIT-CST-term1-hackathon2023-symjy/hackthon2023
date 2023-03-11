@@ -180,3 +180,10 @@ main {
     text-decoration: none;
     cursor: pointer;
 }
+
+#disqus_thread {
+    margin-top: 50px; /* add some space between previous content and the Disqus section */
+    max-width: 800px; /* set the maximum width of the Disqus section */
+    margin-left: auto; /* center the Disqus section horizontally */
+    margin-right: auto;
+}
