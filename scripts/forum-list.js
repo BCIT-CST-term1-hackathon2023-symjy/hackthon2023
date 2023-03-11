@@ -46,7 +46,7 @@ function displayForumCards(collection) {
             newcard.querySelector("h5").innerHTML = interest;
             newcard.querySelector("p").innerHTML = title;
             newcard.querySelector("a").href =
-              "forum-details.html?docID=" + docID;
+              "forum-detail.html?docID=" + docID;
 
             document
               .getElementById(collection + "-go-here")
