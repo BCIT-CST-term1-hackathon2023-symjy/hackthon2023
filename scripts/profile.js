@@ -1,79 +1,66 @@
-// Initialize Firebase
-var firebaseConfig = {
-    // Replace with your Firebase config
-  };
-  firebase.initializeApp(firebaseConfig);
-  
-  
-  // Get references to Firebase database and authentication
-  var database = firebase.database();
-  var auth = firebase.auth();
-  
-  // Get references to HTML elements
-  var nameInput = document.getElementById("name");
-  var emailInput = document.getElementById("email");
-  var locationInput = document.getElementById("location");
-  var interestsInput = document.getElementById("interests");
-  var positionSelect = document.getElementById("position");
-  var careerSelect = document.getElementById("career");
-  var addButton = document.querySelector(".Add");
-  
-  // Listen for changes to the form fields and update Firebase
-  addButton.addEventListener("click", function() {
-    // Get the user ID and check if they're logged in
-    var userId = auth.currentUser.uid;
-    if (!userId) {
-      return;
-    }
-  
-    // Get the values of the form fields
-    var name = nameInput.value.trim();
-    var email = emailInput.value.trim();
-    var location = locationInput.value.trim();
-    var interests = interestsInput.value.trim();
-    var position = positionSelect.value;
-    var career = careerSelect.value;
-  
-    // Update the data in Firebase
-    var userRef = database.ref("users/" + userId);
-    userRef.update({
-      name: name,
-      email: email,
-      location: location,
-      interests: interests,
-      position: position,
-      career: career
+var currentUser;          //put this right after you start script tag before writing any functions.
+
+function populateUserInfo() {
+    firebase.auth().onAuthStateChanged(user => {
+        // Check if user is signed in:
+        if (user) {
+
+            //go to the correct user document by referencing to the user uid
+            currentUser = db.collection("users").doc(user.uid)
+            //get the document for current user.
+            currentUser.get()
+                .then(userDoc => {
+                    //get the data fields of the user
+                    var userName = userDoc.data().name;
+                    var userEmail = userDoc.data().email;
+
+                    //if the data fields are not empty, then write them in to the form.
+                    if (userName != null) {
+                        document.getElementById("nameInput").value = userName;
+                    }
+                    if (userEmail != null) {
+                        document.getElementById("emailInput").value = userEmail;
+                    }
+                })
+        } else {
+            // No user is signed in.
+            console.log ("No user is signed in");
+        }
     });
-  });
+}
+populateUserInfo();
+
+var firebaseConfig = {
+    // Your Firebase project configuration details
+  };
   
-  // Listen for changes to the user authentication state
-  auth.onAuthStateChanged(function(user) {
-    if (user) {
-      // User is signed in
-      var userId = user.uid;
+  function addTask() {
+    // Get the selected values from the dropdowns
+    var specialList = document.getElementById("special");
+    var specialChoice = specialList.options[specialList.selectedIndex].text;
+    var positionList = document.getElementById("position");
+    var positionChoice = positionList.options[positionList.selectedIndex].text;
+    var careerList = document.getElementById("career");
+    var careerChoice = careerList.options[careerList.selectedIndex].text;
+    var interestList = document.getElementById("interest");
+    var interestChoice = interestList.options[interestList.selectedIndex].text;
   
-      // Retrieve the user's data from Firebase
-      var userRef = database.ref("users/" + userId);
-      userRef.once("value", function(snapshot) {
-        var data = snapshot.val();
-  
-        // Set the values of the form fields
-        nameInput.value = data.name || "";
-        emailInput.value = data.email || "";
-        locationInput.value = data.location || "";
-        interestsInput.value = data.interests || "";
-        positionSelect.value = data.position || "position-1";
-        careerSelect.value = data.career || "career-1";
-      });
-    } else {
-      // User is signed out
-      // Clear the values of the form fields
-      nameInput.value = "";
-      emailInput.value = "";
-      locationInput.value = "";
-      interestsInput.value = "";
-      positionSelect.value = "position-1";
-      careerSelect.value = "career-1";
-    }
-  });
+    //내 로그인 되어있으면
+    firebase.auth().onAuthStateChanged((user) => {
+        var currentUser = db.collection("users").doc(user.uid);
+        var userUID = user.uid;
+       
+        //Add the selected values to the Firebase database
+        db.collection("users").doc(userUID).update({
+          secialization: specialChoice,
+          position:positionChoice,
+          career: careerChoice,
+          interest: interestChoice
+        }).then(function(){
+          console.log("test success");
+        }).catch(function(error){
+          console.log('error' +error);
+        })
+    });
+}
   

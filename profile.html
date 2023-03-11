@@ -43,7 +43,7 @@
 
     <form>
         <fieldset>
-            <label for="speical detail">Position</label>
+            <label for="speical detail">Specialization</label>
             <select id="special">
                 <option value="speical-1">Front-End</option>
                 <option value="speical-2">Black-End</option>
@@ -67,19 +67,19 @@
                 <option value="career-5">8+ years</option>
             </select>
             <br>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+            <label for="name">Name: </label>
+            <input type="text" id="nameInput" name="name" required>
             <br>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <label for="email">Email: </label>
+            <input type="text" id="emailInput" name="email" required>
             <br>
-            <label for="programming language">Interest</label>
-            <select id="language">
-                <option value="language-1">Java</option>
-                <option value="language-2">Python</option>
-                <option value="language-3">C++</option>
-                <option value="language-4">JavaScript</option>
-                <option value="language-5">PHP</option>
+            <label for="programming language">Interest: </label>
+            <select id="interest">
+                <option value="interest-1">Java</option>
+                <option value="interest-2">Python</option>
+                <option value="interest-3">C++</option>
+                <option value="interest-4">JavaScript</option>
+                <option value="interest-5">PHP</option>
             </select>
             <br>
             <button type="button" class="Add Task" onclick="addTask()">Submit</button>
@@ -88,6 +88,8 @@
 
     <script src="./scripts/firebaseAPI.js"></script>
     <script src="./scripts/skeleton.js"></script>
+    <script src="./scripts/profile.js"></script>
+    
 </body>
 
 </html>
