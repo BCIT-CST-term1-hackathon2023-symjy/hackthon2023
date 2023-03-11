@@ -46,8 +46,6 @@ function displayForumCards(collection) {
                 newcard.querySelector('a').href = "forum-list.html?docID="+docID;
 
                 document.getElementById(collection + "-go-here").appendChild(newcard);
-
-                //i++;   //Optional: iterate variable to serve as unique ID
             })
         })
 }
