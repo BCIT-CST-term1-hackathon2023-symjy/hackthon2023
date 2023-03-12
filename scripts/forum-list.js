@@ -25,28 +25,28 @@
 //------------------------------------------------------------------------------
 function displayForumCards(collection) {
   let cardTemplate = document.getElementById("forumListCardTemplate");
-  let params = new URL( window.location.href ); //get URL of search bar
-  let ID = params.searchParams.get( "docID" ); //get value for key "id"
+  let params = new URL(window.location.href); //get URL of search bar
+  let ID = params.searchParams.get("docID"); //get value for key "id"
 
   db.collection(collection)
-  .get() //the collection called "forums"
-  .then((allForumsList) => {
-    allForumsList.forEach((doc) => {
+    .get() //the collection called "forums"
+    .then((allForumsList) => {
+      allForumsList.forEach((doc) => {
         var compareSpeial;
-        console.log( ID );
-        if(ID == 'L0fzq07tnQ8q9AlR2YBg'){
-          compareSpecial = 'Front-end';
-        }else{
-          compareSpecial = 'Back-end';
+        console.log(ID);
+        if (ID == "L0fzq07tnQ8q9AlR2YBg") {
+          compareSpecial = "Front-end";
+        } else {
+          compareSpecial = "Back-end";
         }
 
         var specialization = doc.data().specialization; // get value of the "interest" key
-        if(compareSpecial == specialization){
+        if (compareSpecial == specialization) {
           var interest = doc.data().interest; // get value of the "interest" key
           var title = doc.data().title; // get value of the "title" key
           var writer = doc.data().writer; // get value of the "writer" key
           var docID = doc.id;
-  
+
           let newcard = cardTemplate.content.cloneNode(true);
           db.collection("users")
             .doc(writer)
@@ -59,7 +59,7 @@ function displayForumCards(collection) {
               newcard.querySelector("p").innerHTML = title;
               newcard.querySelector("a").href =
                 "forum-detail.html?docID=" + docID;
-  
+
               document
                 .getElementById(collection + "-go-here")
                 .appendChild(newcard);
@@ -70,13 +70,20 @@ function displayForumCards(collection) {
 }
 displayForumCards("posts"); //input param is the name of the collection
 
-function goChat(){
-  let params = new URL( window.location.href ); //get URL of search bar
-  let ID = params.searchParams.get( "docID" ); //get value for key "id"
+function goPost() {
+  let params = new URL(window.location.href); //get URL of search bar
+  let ID = params.searchParams.get("docID"); //get value for key "id"
 
-  if(ID == 'L0fzq07tnQ8q9AlR2YBg'){
-    window.location.href="front-chat.html";
-  }else{
-    window.location.href="back-chat.html";
+  window.location.href = 'forum-write.html?docID=' + ID;
+}
+
+function goChat() {
+  let params = new URL(window.location.href); //get URL of search bar
+  let ID = params.searchParams.get("docID"); //get value for key "id"
+
+  if (ID == "L0fzq07tnQ8q9AlR2YBg") {
+    window.location.href = "front-chat.html";
+  } else {
+    window.location.href = "back-chat.html";
   }
 }

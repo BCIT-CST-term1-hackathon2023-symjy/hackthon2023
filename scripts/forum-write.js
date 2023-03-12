@@ -1,5 +1,9 @@
 document.querySelector('form').addEventListener('submit', function(e) {
   e.preventDefault();
+  
+  let params = new URL( window.location.href ); //get URL of search bar
+  let ID = params.searchParams.get( "docID" ); //get value for key "id"
+  console.log(ID);
 
   var uid = null;
   firebase.auth().onAuthStateChanged(function(user) {
@@ -11,6 +15,7 @@ document.querySelector('form').addEventListener('submit', function(e) {
       var content = document.getElementById('content').value;
       var specialization = document.getElementById('specialization').value;
 
+
       db.collection("posts").add({
         title: title,
         interest: category,
@@ -20,8 +25,8 @@ document.querySelector('form').addEventListener('submit', function(e) {
       })
       .then(function(docRef) {
         console.log("Document written with ID: ", docRef.id);
-        alert("Post uploaded.");
-        location.href = "forum-list.html";
+        // alert("Post uploaded.");
+        location.href = "forum-list.html?docID=" + ID;
       })
       .catch(function(error) {
         console.error("Error adding document: ", error);
