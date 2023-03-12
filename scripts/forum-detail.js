@@ -55,7 +55,7 @@ function writeReview() {
           localStorage.setItem('listDocID', postID);
           var currentUser = db.collection("users").doc(user.uid);
           var comment = document.getElementById('comment').value;
-          var writer = user.uid;
+          var writer = user.displayName;
           var timestamp = firebase.firestore.Timestamp.now();
 
           db.collection("comments").add({
@@ -90,17 +90,19 @@ function displayComments(collection, postID) {
         const writerText = document.createElement("small");
         writerText.textContent = `${writerName}: `;
         commentDiv.appendChild(writerText);
-
         commentDiv.appendChild(commentText);
-        commentContainer.appendChild(commentDiv);
+        
+        const commentContent = document.createElement("div");
+        commentContent.classList.add("comment-content");
+        commentContent.appendChild(commentDiv);
+        
+        commentContainer.appendChild(commentContent);
       });
     })
     .catch((error) => {
       console.error("Error getting comments: ", error);
     });
 }
-
-
 
 var params = new URL(window.location.href);
 var postID = params.searchParams.get("docID");
