@@ -56,13 +56,15 @@ body {
 }
 
 .btn-lg{
-    background-color: green;
-    border-color: green;
+    background-color: #D10165;
+    border: 1px solid #D10165;
+   
 }
+
+
 
 .container {
     margin-top: 4rem;
-    
   }
   
   .btn-write {
@@ -75,9 +77,11 @@ body {
   }
 
   .btn-write:hover {
-    background-color: greenyellow;
-    color: #000;
+    background-color: white;
+    border: 1px solid #D10165;
+    color: #D10165 ;
   }
+
 /*   
   #button {
   display: flex;
