@@ -94,10 +94,10 @@ function displayComments(collection, postID) {
           const writerText = document.createElement("small");
           writerText.textContent = `${writerName}`;
           commentDiv.appendChild(writerText);
+
+          commentDiv.appendChild(commentText);
+          commentContainer.appendChild(commentDiv);
         });
-      
-        commentDiv.appendChild(commentText);
-        commentContainer.appendChild(commentDiv);
       });
     })
     .catch((error) => {
@@ -116,4 +116,3 @@ firebase.auth().onAuthStateChanged(user => {
     localStorage.setItem('listDocID', postID);
   }
 });
-
