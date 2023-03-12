@@ -4,12 +4,13 @@
 //---------------------------------------------------
 
 function loadSkeleton() {
-    $('#navbarPlaceholder').load('./text/nav.html');
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             // User is signed in.
             // Do something for the user here.
-            document.getElementById("goForum").style.display = 'inline';
+            if(document.getElementById("goForum")!=null){
+                document.getElementById("goForum").style.display = 'inline';
+            }
             $('#navbarPlaceholder').load('./text/nav.html');
         } else {
             // No user is signed in.
@@ -22,11 +23,11 @@ function loadSkeleton() {
 }
 loadSkeleton(); //invoke the function
 
-function logout() {
-    firebase.auth().signOut().then(() => {
-        // Sign-out successful.
-        console.log("logging out user");
-      }).catch((error) => {
-        // An error happened.
-      });
-  }
+// function logout() {
+//     firebase.auth().signOut().then(() => {
+//         // Sign-out successful.
+//         console.log("logging out user");
+//       }).catch((error) => {
+//         // An error happened.
+//       });
+//   }
