@@ -48,6 +48,7 @@ function writeReview() {
 
   console.log(comment);
 
+<<<<<<< HEAD
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       var currentUser = db.collection("users").doc(user.uid);
@@ -64,9 +65,38 @@ function writeReview() {
 }
 
 function displayComments(collection) {
-  const commentContainer = document.getElementById("comment-container");
+=======
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            var params = new URL(window.location.href)
+            var postID = params.searchParams.get("docID");
+            localStorage.setItem('listDocID', postID);
+            var currentUser = db.collection("users").doc(user.uid);
+            var comment = document.getElementById('comment').value;
+            var userID = user.uid;
+            //get the document for current user.
 
+
+            db.collection("comments").add({
+                userID: userID,
+                comment: comment,
+                postID: postID,
+            })
+
+        }
+    });
+}
+
+function displayComments(collection, postID) {
+>>>>>>> fa6b0c9 (pull comment)
+  const commentContainer = document.getElementById("comment-container");
+  commentContainer.innerHTML = "";
+
+<<<<<<< HEAD
   db.collection(collection)
+=======
+  db.collection(collection).where("postID", "==", postID)
+>>>>>>> fa6b0c9 (pull comment)
     .get()
     .then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
@@ -86,6 +116,7 @@ function displayComments(collection) {
     });
 }
 
+<<<<<<< HEAD
 displayComments("comments");
 
 function ditto() {
@@ -107,3 +138,16 @@ function ditto() {
       // db.collection("posts").doc(ID).update({ ditto: ditto });
     });
 }
+=======
+var params = new URL(window.location.href);
+var postID = params.searchParams.get("docID");
+displayComments("comments", postID);
+
+firebase.auth().onAuthStateChanged(user => {
+  if (user) {
+    var params = new URL(window.location.href);
+    var postID = params.searchParams.get("docID");
+    localStorage.setItem('listDocID', postID);
+  }
+});
+>>>>>>> fa6b0c9 (pull comment)
