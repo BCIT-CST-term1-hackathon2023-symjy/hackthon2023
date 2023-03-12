@@ -27,15 +27,16 @@ body {
 }
 
 #hero h1 {
-  font-size: 4rem;
+  font-size: 2rem;
   margin-bottom: 2rem;
-  color: #212529;
+  color: #330C2F;
+  font-weight: 700;
 }
 
 #hero p {
   font-size: 1.5rem;
   margin-bottom: 2rem;
-  color: #6c757d;
+  color: #330C2F;
 }
 
 /* .btn-primary {
@@ -78,7 +79,7 @@ body {
 #testimonials h2 {
   font-size: 3rem;
   margin-bottom: 2rem;
-  color: #212529;
+  color: #330C2F;
   text-align: center;
 }
 
@@ -87,7 +88,7 @@ blockquote {
   padding: 0;
   font-size: 1.2rem;
   margin-bottom: 2rem;
-  color: #6c757d;
+  color: #330C2F;
 }
 
 blockquote p {
@@ -98,12 +99,14 @@ blockquote p {
 blockquote footer {
   font-weight: bold;
   font-size: 1.2rem;
+  
 }
 
 .btn-lg {
   background-color: #d10165;
   border: 1px solid #d10165;
   font-weight: bold;
+  margin-top: 1rem;
 }
 
 .btn-lg:hover {
@@ -111,3 +114,19 @@ blockquote footer {
   border: 1px solid #d10165;
   color: #d10165;
 }
+
+#hero {
+  background-image: url("../image/ditto.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%; /* set a width for the div */
+  /* height: 500px; set a height for the div */
+  
+  display: flex;
+  align-items: center;
+  justify-content: center; /* horizontally center the content */
+  text-align: center; /* center the text */
+}
+
+
