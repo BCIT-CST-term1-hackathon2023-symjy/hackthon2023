@@ -69,3 +69,14 @@ function displayForumCards(collection) {
     });
 }
 displayForumCards("posts"); //input param is the name of the collection
+
+function goChat(){
+  let params = new URL( window.location.href ); //get URL of search bar
+  let ID = params.searchParams.get( "docID" ); //get value for key "id"
+
+  if(ID == 'L0fzq07tnQ8q9AlR2YBg'){
+    window.location.href="front-chat.html";
+  }else{
+    window.location.href="back-chat.html";
+  }
+}
