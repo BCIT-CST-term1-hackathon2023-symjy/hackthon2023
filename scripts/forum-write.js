@@ -22,6 +22,7 @@ document.querySelector('form').addEventListener('submit', function(e) {
         content: content,
         writer: uid,
         specialization: specialization,
+        ditto:0
       })
       .then(function(docRef) {
         console.log("Document written with ID: ", docRef.id);

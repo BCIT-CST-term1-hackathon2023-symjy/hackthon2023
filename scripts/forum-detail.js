@@ -85,22 +85,23 @@ function displayComments(collection, postID) {
         const commentText = document.createElement("p");
         const comment = doc.data().comment;
         commentText.textContent = comment;
+      
+        const writer = doc.data().writer;
+        db.collection("users").doc(writer).get().then((userDoc) => {
+          const writerName = userDoc.data().name;
+          const writerText = document.createElement("small");
+          writerText.textContent = `${writerName}`;
+          commentDiv.appendChild(writerText);
 
-        const writerName = doc.data().writer;
-        const writerText = document.createElement("small");
-        writerText.textContent = `${writerName}: `;
-        commentDiv.appendChild(writerText);
-
-        commentDiv.appendChild(commentText);
-        commentContainer.appendChild(commentDiv);
+          commentDiv.appendChild(commentText);
+          commentContainer.appendChild(commentDiv);
+        });
       });
     })
     .catch((error) => {
       console.error("Error getting comments: ", error);
     });
 }
-
-
 
 var params = new URL(window.location.href);
 var postID = params.searchParams.get("docID");
@@ -122,9 +123,7 @@ function ditto(){
   .get()
   .then(doc => {
     let thisDetail = doc.data();
-    console.log("Ditto");
     let ditto = thisDetail.ditto; // get the current value of ditto
-    console.log(ditto);
 
     // increment ditto by one
     ditto++;
@@ -135,7 +134,7 @@ function ditto(){
       .update({ ditto: ditto })
       .then(() => {
         console.log("Ditto count updated successfully!");
-        window.href="forum-detail.html?docID="+ID;
+        window.hred
       })
       .catch(error => {
         console.error("Error updating Ditto count:", error);
