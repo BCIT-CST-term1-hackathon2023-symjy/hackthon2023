@@ -13,7 +13,6 @@
 //                var storyDiv = document.querySelector(".story")
 //                var storyH2 = storyDiv.querySelector("h2");
 //                storyH2.innerText=userTitle;
-               
 //            })    
 //        }    
 //     })}
@@ -45,7 +44,6 @@ function displayDetailsInfo() {
 displayDetailsInfo();
 
 function writeReview() {
-  console.log("inside write review")
   let comment = document.getElementById("comment").value;
 
   console.log(comment);
@@ -116,3 +114,32 @@ firebase.auth().onAuthStateChanged(user => {
     localStorage.setItem('listDocID', postID);
   }
 });
+
+function ditto(){
+  var params = new URL(window.location.href);
+  var ID = params.searchParams.get("docID");
+  db.collection("posts")
+  .doc(ID)
+  .get()
+  .then(doc => {
+    let thisDetail = doc.data();
+    console.log("Ditto");
+    let ditto = thisDetail.ditto; // get the current value of ditto
+    console.log(ditto);
+
+    // increment ditto by one
+    ditto++;
+
+    // update ditto in the database
+    db.collection("posts")
+      .doc(ID)
+      .update({ ditto: ditto })
+      .then(() => {
+        console.log("Ditto count updated successfully!");
+        window.href="forum-detail.html?docID="+ID;
+      })
+      .catch(error => {
+        console.error("Error updating Ditto count:", error);
+      });
+  });
+}
