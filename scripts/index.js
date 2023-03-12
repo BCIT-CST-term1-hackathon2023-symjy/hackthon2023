@@ -39,3 +39,24 @@ function displayStatisticsCards(collection) {
     });
 }
 displayStatisticsCards("statistics");  //input param is the name of the collection
+
+// function goForum(){
+//     firebase.auth().onAuthStateChanged(function (user) {
+//         if (user) {
+//             // Create a new a element
+//             var a = document.createElement("a");
+            
+//             // Set the a element properties
+//             a.className = "btn btn-primary btn-lg";
+//             a.innerHTML = "Go Forum";
+//             a.href = "forum-main.html";
+//             a.role = "button";
+            
+//             // Append the a element to the forumSection element
+//             document.getElementById("forumSection").appendChild(a);
+//         }else{
+            
+//         }
+//     });
+// }
+// goForum();
