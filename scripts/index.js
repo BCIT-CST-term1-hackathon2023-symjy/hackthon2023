@@ -60,3 +60,26 @@ displayStatisticsCards("statistics");  //input param is the name of the collecti
 //     });
 // }
 // goForum();
+
+function displayDittoCards(collection) {
+    let cardTemplate = document.getElementById("dittoPostTemplate");
+
+    db.collection(collection)
+    .orderBy("ditto","desc")
+    .limit(3)
+    .get() //the collection called "forums"
+    .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            // Extract the post data from the document
+            var ditto = doc.data().ditto;
+            var title = doc.data().title;
+      
+            let newcard = cardTemplate.content.cloneNode(true);
+            newcard.querySelector("h3").innerHTML = ditto;
+            newcard.querySelector("p").innerHTML = title;
+      
+            document.getElementById(collection + "-go-here").appendChild(newcard);
+          });
+    });
+}
+displayDittoCards("posts");  //input param is the name of the collection

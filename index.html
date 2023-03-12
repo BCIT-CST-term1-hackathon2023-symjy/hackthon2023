@@ -44,14 +44,16 @@
             <h1>Welcome to Developer Community</h1>
             <p class="lead">Join a community of developers, collaborate on projects, share knowledge, and grow your
                 skills.</p>
-            <a class="btn btn-primary btn-lg" href="forum-main.html" role="button" style="display: none;" id="goForum">Go Forum</a>
+            <a class="btn btn-primary btn-lg" href="forum-main.html" role="button" style="display: none;"
+                id="goForum">Go Forum</a>
         </div>
     </section>
     <!-- Features section -->
-    <!-- <section id="features" class="bg-white">
-        <div class="container">
+    <section id="features" class="bg-white">
+        <div class="container" >
             <div class="row">
-                <div class="col-md-4">
+                <div id="posts-go-here" class="container-fluid"></div>
+                <!-- <div class="col-md-4">
                     <div class="card">
                         <div class="card-body">
                             <i class="fas fa-comments fa-3x mb-3"></i>
@@ -78,10 +80,21 @@
                                 technologies.</p>
                         </div>
                     </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+    <!-- Ditto Post template -->
+    <template id="dittoPostTemplate">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h3>Collaboration Tools</h3>
+                    <p>Work on projects with other developers, track changes, and manage versions.</p>
                 </div>
             </div>
         </div>
-    </section> -->
+    </template>
     <!-- Testimonials section -->
     <section id="testimonials" class="bg-light">
         <div class="container">
@@ -111,6 +124,7 @@
             </div>
         </div>
     </section>
+    <!-- Statistics template -->
     <template id="statisticsCardTemplate">
         <div class="carousel-item">
             <blockquote class="blockquote">
@@ -119,7 +133,7 @@
                     The forums are full of helpful people and the collaboration tools have
                     helped me
                     work on projects with others.</p>
-                    <footer class="blockquote-footer">John Smith</footer>
+                <footer class="blockquote-footer">John Smith</footer>
             </blockquote>
         </div>
     </template>
