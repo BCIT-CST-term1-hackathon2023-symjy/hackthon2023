@@ -57,11 +57,11 @@ function writeReview() {
           localStorage.setItem('listDocID', postID);
           var currentUser = db.collection("users").doc(user.uid);
           var comment = document.getElementById('comment').value;
-          var userID = user.uid;
+          var writer = user.uid;
           var timestamp = firebase.firestore.Timestamp.now();
 
           db.collection("comments").add({
-              userID: userID,
+              writer: writer,
               comment: comment,
               postID: postID,
               timestamp: timestamp,
@@ -84,13 +84,19 @@ function displayComments(collection, postID) {
     .then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
         const commentDiv = document.createElement("div");
-
         const commentText = document.createElement("p");
         const comment = doc.data().comment;
         commentText.textContent = comment;
-
+      
+        const writer = doc.data().writer;
+        db.collection("users").doc(writer).get().then((userDoc) => {
+          const writerName = userDoc.data().name;
+          const writerText = document.createElement("small");
+          writerText.textContent = `${writerName}`;
+          commentDiv.appendChild(writerText);
+        });
+      
         commentDiv.appendChild(commentText);
-
         commentContainer.appendChild(commentDiv);
       });
     })
