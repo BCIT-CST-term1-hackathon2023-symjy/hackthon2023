@@ -38,6 +38,23 @@ nav a:hover {
     text-decoration: underline;
 }
 
+/* Navbar customizing */
+.navbar {
+    background-color: #2E7AA9;
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 2rem;
+    color: #2E7AA9;
+  }
+  
+  .nav-link {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.6em;
+  }
+
 /* Set main content styles */
 main {
     max-width: 800px;

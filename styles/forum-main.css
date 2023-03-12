@@ -7,6 +7,24 @@ h1 {
     color: #330C2F;
 }
 
+/* Style the navigation bar */
+.navbar {
+    background-color: #2E7AA9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 2rem;
+    color: #2E7AA9;
+}
+
+.nav-link {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.6em;
+}
+
 /* Styles for the cards */
 .card {
     background-color: #fff;
