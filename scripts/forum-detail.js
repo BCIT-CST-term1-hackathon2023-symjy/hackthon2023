@@ -20,3 +20,28 @@ function writeReview() {
         }
     });
 }
+
+function displayComments(collection) {
+    
+  const commentContainer = document.getElementById("comment-container");
+
+  db.collection(collection).get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        const commentDiv = document.createElement("div");
+
+        const commentText = document.createElement("p");
+        const comment = doc.data().comment;
+        commentText.textContent = comment;
+
+        commentDiv.appendChild(commentText);
+
+        commentContainer.appendChild(commentDiv);
+      });
+    })
+    .catch((error) => {
+      console.error("Error getting comments: ", error);
+    });
+}
+
+displayComments("comments");
