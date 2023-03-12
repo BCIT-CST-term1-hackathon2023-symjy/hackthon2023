@@ -55,7 +55,7 @@ function writeReview() {
           localStorage.setItem('listDocID', postID);
           var currentUser = db.collection("users").doc(user.uid);
           var comment = document.getElementById('comment').value;
-          var writer = user.uid;
+          var writer = user.displayName;
           var timestamp = firebase.firestore.Timestamp.now();
 
           db.collection("comments").add({
@@ -85,17 +85,18 @@ function displayComments(collection, postID) {
         const commentText = document.createElement("p");
         const comment = doc.data().comment;
         commentText.textContent = comment;
-      
-        const writer = doc.data().writer;
-        db.collection("users").doc(writer).get().then((userDoc) => {
-          const writerName = userDoc.data().name;
-          const writerText = document.createElement("small");
-          writerText.textContent = `${writerName}`;
-          commentDiv.appendChild(writerText);
 
-          commentDiv.appendChild(commentText);
-          commentContainer.appendChild(commentDiv);
-        });
+        const writerName = doc.data().writer;
+        const writerText = document.createElement("small");
+        writerText.textContent = `${writerName}: `;
+        commentDiv.appendChild(writerText);
+        commentDiv.appendChild(commentText);
+        
+        const commentContent = document.createElement("div");
+        commentContent.classList.add("comment-content");
+        commentContent.appendChild(commentDiv);
+        
+        commentContainer.appendChild(commentContent);
       });
     })
     .catch((error) => {
@@ -123,7 +124,9 @@ function ditto(){
   .get()
   .then(doc => {
     let thisDetail = doc.data();
+    console.log("Ditto");
     let ditto = thisDetail.ditto; // get the current value of ditto
+    console.log(ditto);
 
     // increment ditto by one
     ditto++;
@@ -134,7 +137,7 @@ function ditto(){
       .update({ ditto: ditto })
       .then(() => {
         console.log("Ditto count updated successfully!");
-        window.hred
+        window.href="forum-detail.html?docID="+ID;
       })
       .catch(error => {
         console.error("Error updating Ditto count:", error);
