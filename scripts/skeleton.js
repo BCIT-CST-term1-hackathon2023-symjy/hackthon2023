@@ -8,15 +8,15 @@ function loadSkeleton() {
         if (user) {
             // User is signed in.
             // Do something for the user here.
-            if(document.getElementById("goForum")!=null){
-                document.getElementById("goForum").style.display = 'inline';
-            }
+            // if(document.getElementById("goForum")!=null){
+            //     document.getElementById("goForum").style.display = 'inline';
+            // }
             $('#navbarPlaceholder').load('./text/nav.html');
         } else {
             // No user is signed in.
-            if(document.getElementById("goForum")!=null){
-                document.getElementById("goForum").style.display = 'none';
-            }
+            // if(document.getElementById("goForum")!=null){
+            //     document.getElementById("goForum").style.display = 'none';
+            // }
             $('#navbarPlaceholder').load('./text/nav-before-login.html');
         }
     });
