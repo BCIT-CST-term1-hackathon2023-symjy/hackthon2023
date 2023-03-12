@@ -85,23 +85,22 @@ function displayComments(collection, postID) {
         const commentText = document.createElement("p");
         const comment = doc.data().comment;
         commentText.textContent = comment;
-      
-        const writer = doc.data().writer;
-        db.collection("users").doc(writer).get().then((userDoc) => {
-          const writerName = userDoc.data().name;
-          const writerText = document.createElement("small");
-          writerText.textContent = `${writerName}`;
-          commentDiv.appendChild(writerText);
 
-          commentDiv.appendChild(commentText);
-          commentContainer.appendChild(commentDiv);
-        });
+        const writerName = doc.data().writer;
+        const writerText = document.createElement("small");
+        writerText.textContent = `${writerName}: `;
+        commentDiv.appendChild(writerText);
+
+        commentDiv.appendChild(commentText);
+        commentContainer.appendChild(commentDiv);
       });
     })
     .catch((error) => {
       console.error("Error getting comments: ", error);
     });
 }
+
+
 
 var params = new URL(window.location.href);
 var postID = params.searchParams.get("docID");
