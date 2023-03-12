@@ -58,41 +58,45 @@ function writeReview() {
           var currentUser = db.collection("users").doc(user.uid);
           var comment = document.getElementById('comment').value;
           var userID = user.uid;
-          //get the document for current user.
-
+          var timestamp = firebase.firestore.Timestamp.now();
 
           db.collection("comments").add({
               userID: userID,
               comment: comment,
               postID: postID,
-          })
+              timestamp: timestamp,
+          }).then(() => {
+            displayComments("comments", postID);
+        })
 
       }
   });
 }
 
 function displayComments(collection, postID) {
-const commentContainer = document.getElementById("comment-container");
-commentContainer.innerHTML = "";
+  const commentContainer = document.getElementById("comment-container");
+  commentContainer.innerHTML = "";
 
-db.collection(collection).where("postID", "==", postID)
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      const commentDiv = document.createElement("div");
+  db.collection(collection)
+    .where("postID", "==", postID)
+    .orderBy("timestamp", "asc")
+    .get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        const commentDiv = document.createElement("div");
 
-      const commentText = document.createElement("p");
-      const comment = doc.data().comment;
-      commentText.textContent = comment;
+        const commentText = document.createElement("p");
+        const comment = doc.data().comment;
+        commentText.textContent = comment;
 
-      commentDiv.appendChild(commentText);
+        commentDiv.appendChild(commentText);
 
-      commentContainer.appendChild(commentDiv);
+        commentContainer.appendChild(commentDiv);
+      });
+    })
+    .catch((error) => {
+      console.error("Error getting comments: ", error);
     });
-  })
-  .catch((error) => {
-    console.error("Error getting comments: ", error);
-  });
 }
 
 var params = new URL(window.location.href);
@@ -100,10 +104,10 @@ var postID = params.searchParams.get("docID");
 displayComments("comments", postID);
 
 firebase.auth().onAuthStateChanged(user => {
-if (user) {
-  var params = new URL(window.location.href);
-  var postID = params.searchParams.get("docID");
-  localStorage.setItem('listDocID', postID);
-}
+  if (user) {
+    var params = new URL(window.location.href);
+    var postID = params.searchParams.get("docID");
+    localStorage.setItem('listDocID', postID);
+  }
 });
 
