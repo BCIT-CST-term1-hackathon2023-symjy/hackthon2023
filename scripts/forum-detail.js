@@ -31,7 +31,6 @@ function displayDetailsInfo() {
       .then( doc => {
           thisDetail = doc.data();
           console.log("good");
-          postCode = thisDetail.code;
           detailTitle = doc.data().title;
           detailContent = doc.data().content;
           
